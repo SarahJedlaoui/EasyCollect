@@ -46,7 +46,7 @@ export const Hero = () => {
             Trusted by <span className="text-green-600">2000+</span>{" "}
             customers
           </div>
-
+  {/**
           <div className="flex flex-wrap justify-center gap-5 mt-10 md:justify-around">
             <div className="pt-2 text-gray-400 dark:text-gray-400">
               <AmazonLogo />
@@ -63,7 +63,7 @@ export const Hero = () => {
             <div className="pt-2 text-gray-400 dark:text-gray-400">
               <SonyLogo />
             </div>
-          </div>
+          </div> */}
         </div>
       </Container>
     </>
