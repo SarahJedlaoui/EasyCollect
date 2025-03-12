@@ -29,7 +29,7 @@ export function Footer() {
             </div>
 
             <div className="max-w-md mt-4 text-gray-500 dark:text-gray-400">
-            Un service dédié aux collaborateurs de Leoni pour faciliter l'accès aux prêts bancaires
+            Un service dédié aux collaborateurs de Leoni pour faciliter l&apos;accès aux prêts bancaires.
             </div>
 
            

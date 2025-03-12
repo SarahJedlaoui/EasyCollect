@@ -42,7 +42,7 @@ export default function Home() {
       <Testimonials />
 */}
       <SectionTitle preTitle="FAQ" title="Foire aux Questions (FAQ)">
-      FAQ d'EasyCollect afin de répondre aux principales questions des collaborateurs de Leoni.
+      FAQ d&apos;EasyCollect afin de répondre aux principales questions des collaborateurs de Leoni.
       </SectionTitle>
 
       <Faq />
