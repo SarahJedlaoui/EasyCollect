@@ -5,24 +5,52 @@ import Image from "next/image"
 import { Disclosure } from "@headlessui/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+
 export const Navbar = () => {
   const navigation = [
     "Home",
     "FAQ"
     
   ];
+
+  // Modal States
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isForgotPasswordModalOpen, setIsForgotPasswordModalOpen] = useState(false);
+  const [isResetPasswordModalOpen, setIsResetPasswordModalOpen] = useState(false);
+
   const router = useRouter();
-  const [phone, setPhone] = useState("");
-  const [password, setPassword] = useState("");
+ // Form States
+ const [phone, setPhone] = useState("");
+ const [password, setPassword] = useState("");
+ const [email, setEmail] = useState("");
+ const [newPassword, setNewPassword] = useState("");
+ const [confirmPassword, setConfirmPassword] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // You can add authentication logic here
-    router.push("/form"); // Redirect to the form page
-    setIsModalOpen(false);
+    router.push("/form");
+    closeLoginModal();
   };
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+
+
+ // Open/Close Modals
+ const openLoginModal = () => setIsLoginModalOpen(true);
+ const closeLoginModal = () => setIsLoginModalOpen(false);
+
+ const openForgotPasswordModal = () => {
+   closeLoginModal();
+   setIsForgotPasswordModalOpen(true);
+ };
+ const closeForgotPasswordModal = () => setIsForgotPasswordModalOpen(false);
+
+ const openResetPasswordModal = () => {
+   closeForgotPasswordModal();
+   setIsResetPasswordModalOpen(true);
+ };
+ const closeResetPasswordModal = () => setIsResetPasswordModalOpen(false);
+
   return (
     <div className="w-full">
       <nav className="container relative flex flex-wrap items-center justify-between p-8 mx-auto lg:justify-between xl:px-1">
@@ -46,11 +74,11 @@ export const Navbar = () => {
         <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
           <ThemeChanger />
           <div className="hidden mr-3 lg:flex nav__item">
-            <button
-              onClick={openModal}
+          <button
+              onClick={openLoginModal}
               className="px-6 py-2 text-white bg-green-600 rounded-md md:ml-5"
             >
-              SigIn
+              Se connecter
             </button>
           </div>
         </div>
@@ -88,12 +116,12 @@ export const Navbar = () => {
                       {item}
                     </Link>
                   ))}
-                  <button
-                    onClick={openModal}
-                    className="px-6 py-2 text-white bg-green-600 rounded-md md:ml-5"
-                  >
-                    SigIn
-                  </button>
+                 <button
+              onClick={openLoginModal}
+              className="px-6 py-2 text-white bg-green-600 rounded-md md:ml-5"
+            >
+              Se connecter
+            </button>
                 </>
               </Disclosure.Panel>
             </>
@@ -115,7 +143,7 @@ export const Navbar = () => {
 
       </nav>
       {/* Modal */}
-      {isModalOpen && (
+      {isLoginModalOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm w-full">
             <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200 text-center">
@@ -161,13 +189,24 @@ export const Navbar = () => {
                 Se connecter
               </button>
             </form>
-
+            <button onClick={openForgotPasswordModal} className="text-sm text-green-600 mt-2 block text-center">Mot de passe oublié ?</button>
             <button
-              onClick={closeModal}
+              onClick={closeLoginModal}
               className="mt-4 w-full text-center text-gray-500 dark:text-gray-400 hover:underline"
             >
               Annuler
             </button>
+          </div>
+        </div>
+      )}
+      {/* Forgot Password Modal */}
+      {isForgotPasswordModalOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+            <h2 className="text-xl font-semibold text-center">Réinitialisation du mot de passe</h2>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Entrez votre email" className="w-full p-2 border rounded mt-2" required />
+            <button onClick={openResetPasswordModal} className="w-full bg-green-600 text-white p-2 rounded mt-4">Envoyer le lien</button>
+            <button onClick={closeForgotPasswordModal} className="text-gray-500 hover:underline mt-4 w-full text-center">Annuler</button>
           </div>
         </div>
       )}
