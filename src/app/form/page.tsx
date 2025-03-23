@@ -181,9 +181,9 @@ const LoanApplicationForm = () => {
                     </>
                   ) : (
                     <>
-                      <option>Achat d'un logement</option>
-                      <option>Construction d'un logement</option>
-                      <option>Achat d'un terrain</option>
+                      <option>Achat d&apos;un logement</option>
+                      <option>Construction d&apos;un logement</option>
+                      <option>Achat d&apos;un terrain</option>
                     </>
                   )}
                 </select></label>
