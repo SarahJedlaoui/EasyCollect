@@ -10,7 +10,7 @@ export const Navbar = () => {
   const navigation = [
     "Home",
     "FAQ"
-    
+
   ];
 
   // Modal States
@@ -19,12 +19,12 @@ export const Navbar = () => {
   const [isResetPasswordModalOpen, setIsResetPasswordModalOpen] = useState(false);
 
   const router = useRouter();
- // Form States
- const [phone, setPhone] = useState("");
- const [password, setPassword] = useState("");
- const [email, setEmail] = useState("");
- const [newPassword, setNewPassword] = useState("");
- const [confirmPassword, setConfirmPassword] = useState("");
+  // Form States
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
 
@@ -35,21 +35,21 @@ export const Navbar = () => {
   };
 
 
- // Open/Close Modals
- const openLoginModal = () => setIsLoginModalOpen(true);
- const closeLoginModal = () => setIsLoginModalOpen(false);
+  // Open/Close Modals
+  const openLoginModal = () => setIsLoginModalOpen(true);
+  const closeLoginModal = () => setIsLoginModalOpen(false);
 
- const openForgotPasswordModal = () => {
-   closeLoginModal();
-   setIsForgotPasswordModalOpen(true);
- };
- const closeForgotPasswordModal = () => setIsForgotPasswordModalOpen(false);
+  const openForgotPasswordModal = () => {
+    closeLoginModal();
+    setIsForgotPasswordModalOpen(true);
+  };
+  const closeForgotPasswordModal = () => setIsForgotPasswordModalOpen(false);
 
- const openResetPasswordModal = () => {
-   closeForgotPasswordModal();
-   setIsResetPasswordModalOpen(true);
- };
- const closeResetPasswordModal = () => setIsResetPasswordModalOpen(false);
+  const openResetPasswordModal = () => {
+    closeForgotPasswordModal();
+    setIsResetPasswordModalOpen(true);
+  };
+  const closeResetPasswordModal = () => setIsResetPasswordModalOpen(false);
 
   return (
     <div className="w-full">
@@ -74,12 +74,19 @@ export const Navbar = () => {
         <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
           <ThemeChanger />
           <div className="hidden mr-3 lg:flex nav__item">
-          <button
+            <button
               onClick={openLoginModal}
               className="px-6 py-2 text-white bg-green-600 rounded-md md:ml-5"
             >
               Se connecter
             </button>
+            <Link href="/form">
+              <button
+                className="px-6 py-2 text-white bg-green-600 rounded-md md:ml-5"
+              >
+                Formulaire
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -116,12 +123,20 @@ export const Navbar = () => {
                       {item}
                     </Link>
                   ))}
-                 <button
-              onClick={openLoginModal}
-              className="px-6 py-2 text-white bg-green-600 rounded-md md:ml-5"
-            >
-              Se connecter
-            </button>
+                  <div className="flex flex-col gap-4"> {/* Add vertical spacing between buttons */}
+                    <button
+                      onClick={openLoginModal}
+                      className="px-6 py-2 text-white bg-green-600 rounded-md"
+                    >
+                      Se connecter
+                    </button>
+                    <Link href="/form">
+                      <button className="px-6 py-2 text-white bg-green-600 rounded-md">
+                        Formulaire
+                      </button>
+                    </Link>
+                  </div>
+
                 </>
               </Disclosure.Panel>
             </>
