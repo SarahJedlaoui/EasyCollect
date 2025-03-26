@@ -16,7 +16,7 @@ export default function Home() {
         preTitle="Pourquoi EasyCollect"
         title="Pourquoi choisir EasyCollect ?"
       >
-        EasyCollect est une solution digitale développée par EasyBank pour accompagner les collaborateurs de Leoni dans la préparation et la soumission de leur demande de prêt bancaire. Avec une approche simple, rapide et sécurisée, nous vous aidons à rassembler les documents nécessaires et à maximiser vos chances d&apos;obtenir un financement adapté à vos besoins.
+        EasyCollect est une solution digitale développée par EasyBank pour accompagner les clients d&apos;EasyBank dans la préparation et la soumission de leur demande de prêt bancaire. Avec une approche simple, rapide et sécurisée, nous vous aidons à rassembler les documents nécessaires et à maximiser vos chances d&apos;obtenir un financement adapté à vos besoins.
       </SectionTitle>
 
       <Benefits data={benefitOne} />
@@ -26,7 +26,7 @@ export default function Home() {
         preTitle="EasyCollect"
         title="Qui peut bénéficier d’EasyCollect ?"
       >
-        Ce service est exclusivement réservé aux collaborateurs de Leoni souhaitant accéder plus facilement à un crédit bancaire.
+        Ce service est exclusivement réservé aux clients d&apos;EasyBank souhaitant accéder plus facilement à un crédit bancaire.
       </SectionTitle>
 
       <Video videoId="AYsySXh3oHU" />

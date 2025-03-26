@@ -74,7 +74,12 @@ export const Navbar = () => {
         <div className="gap-3 nav__item mr-2 lg:flex ml-auto lg:ml-0 lg:order-2">
           <ThemeChanger />
           <div className="hidden mr-3 lg:flex nav__item">
-           
+            <button
+              onClick={openLoginModal}
+              className="px-6 py-2 text-white bg-green-600 rounded-md md:ml-5"
+            >
+              Se connecter
+            </button>
             <Link href="/form">
               <button
                 className="px-6 py-2 text-white bg-green-600 rounded-md md:ml-5"
@@ -119,7 +124,12 @@ export const Navbar = () => {
                     </Link>
                   ))}
                   <div className="flex flex-col gap-4"> {/* Add vertical spacing between buttons */}
-                   
+                    <button
+                      onClick={openLoginModal}
+                      className="px-6 py-2 text-white bg-green-600 rounded-md"
+                    >
+                      Se connecter
+                    </button>
                     <Link href="/form">
                       <button className="px-6 py-2 text-white bg-green-600 rounded-md">
                         Formulaire

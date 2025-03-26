@@ -37,7 +37,7 @@ export const Faq = () => {
 const faqdata = [
   {
     question: "Qui peut utiliser EasyCollect ?",
-    answer: "EasyCollect est un service exclusivement réservé aux collaborateurs de Leoni souhaitant obtenir un prêt bancaire en toute simplicité.",
+    answer: "EasyCollect est un service exclusivement réservé aux client d'EasyBank souhaitant obtenir un prêt bancaire en toute simplicité.",
   },
   {
     question: " Comment puis-je accéder à la plateforme ?",
